@@ -1,0 +1,44 @@
+name: Deploy_to_Firebase_Hosting
+
+on:
+  push:
+    branches:
+      - release/*.*.*
+  pull_request:
+    branches:
+      - master
+      - release/*.*.*
+
+jobs:
+  deploy_to_firebase_hosting:
+
+    runs-on: ubuntu-latest
+    
+    steps:
+      - name: Checkout the repository
+        uses: actions/checkout@main
+        # `GitHub_PAT` is a secret that 
+        with:
+          token: ${{ secrets.PAT }} 
+      - name: Branch name
+        run: echo running on branch ${GITHUB_REF##*/}
+      - name: Auto Minify
+        uses: nizarmah/auto-minify@master
+        with:
+          directory: 'public/assets'
+          output: 'public/assets/minified'
+  # Auto commits minified files to the repository
+  # Ignore it if you don't want to commit the files to the repository 
+      - name: Auto committing minified files
+        uses: stefanzweifel/git-auto-commit-action@v4
+        with:
+          repository: 'public/assets/minified'
+          commit_message: "Github Action: Auto Minified JS and CSS files"
+          branch: ${{ github.ref }}
+          push_options: --force
+      - name: Deploy to Firebase
+        uses: w9jds/firebase-action@master
+        with:
+          args: deploy --only hosting
+        env:
+          FIREBASE_TOKEN: ${{ secrets.FIREBASE_TOKEN }}
