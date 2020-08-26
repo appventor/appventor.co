@@ -1,0 +1,40 @@
+/*///////////////////////////////////*/
+.landing {
+  width: 100%;
+  margin-top: 10vh;
+  display: flex;
+}
+
+/* Landing Title */
+
+.landing h1 div ul {
+  margin: 0 0.5%;
+  padding: 0;
+  width: auto;
+  text-align: left;
+  animation: animate 10s infinite cubic-bezier(1, 0.015, 0.295, 1.225);
+}
+
+@keyframes animate {
+  0% {
+    transform: translateY(-0px);
+  }
+  15% {
+    transform: translateY(-0px);
+  }
+  25%,
+  40% {
+    transform: translateY(-65px);
+  }
+  50%,
+  65% {
+    transform: translateY(-130px);
+  }
+  75%,
+  90% {
+    transform: translateY(-195px);
+  }
+  100% {
+    transform: translateY(0px);
+  }
+}

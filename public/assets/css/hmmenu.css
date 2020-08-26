@@ -1,0 +1,119 @@
+#menu {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  visibility: hidden;
+  transition: 0.6s;
+}
+
+#menu > div {
+  position: absolute;
+  backdrop-filter: blur(10px);
+  top: 50%;
+  left: 50%;
+  transform: translateX(-150%) translateY(-50%);
+  width: 1600px;
+  height: 1600px;
+  border-radius: 50%;
+  background-color: rgba(0, 0, 0, 0.9);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  text-align: center;
+  transition: 0.6s;
+}
+
+#menu > div > div {
+  max-width: 90vw;
+  max-height: 100vh;
+  opacity: 0;
+  transition: 0.6s;
+}
+
+#menu > div > div > ul > li {
+  list-style: none;
+}
+
+#menu > div > div > ul > li > a {
+  text-decoration: none;
+  color: #fff;
+  font-weight: 550;
+  text-transform: uppercase;
+  margin: 0.5rem;
+  transition: 0.3s;
+  font-size: 1.2rem;
+  display: inline-block;
+}
+
+#menu > div > div > ul > li > a:hover {
+  color: #fff44f;
+}
+
+[type="checkbox"]:checked ~ .menuwrap #menu {
+  visibility: visible;
+}
+
+[type="checkbox"]:checked ~ .menuwrap #menu > div {
+  transform: translateX(-50%) translateY(-50%);
+}
+
+[type="checkbox"]:checked ~ .menuwrap #menu > div > div {
+  opacity: 1;
+}
+
+/* gdfgdfhfghjfghfgh */
+
+[type="checkbox"]:checked ~ .menuwrap #menubtn .top_bar {
+  stroke: grey;
+  stroke-dashoffset: -81px;
+}
+
+[type="checkbox"]:checked ~ .menuwrap #menubtn .bottom_bar {
+  stroke: grey;
+  stroke-dashoffset: -6.3px;
+}
+
+[type="checkbox"]:checked ~ .menuwrap #menubtn .middle_bar {
+  stroke: grey;
+  stroke-dashoffset: -15px;
+  stroke-dasharray: 0.1px 30px;
+}
+
+[type="checkbox"] {
+  display: none;
+}
+
+#menubtn {
+  position: relative;
+  width: 50px;
+  cursor: pointer;
+}
+
+#menubtn path {
+  z-index: 10000;
+  stroke-width: 3px;
+  stroke-linecap: round;
+  stroke: grey;
+  opacity: 0.5;
+  fill: none;
+  transition: all 0.5s ease-in-out;
+}
+
+#menubtn:hover path {
+  opacity: 1;
+}
+
+.top_bar,
+.bottom_bar {
+  stroke-dasharray: 30px 88px;
+}
+
+.middle_bar {
+  stroke-dasharray: 30px 30px;
+}
+
+.bottom_bar {
+  stroke-dashoffset: -88px;
+}

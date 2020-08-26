@@ -1,0 +1,39 @@
+/* DarkMode crescent circle */
+
+.sun {
+  position: relative;
+  border-radius: 100%;
+  width: 2rem;
+  height: 2rem;
+  background: linear-gradient(40deg, #ff0080, #ff8c00 70%);
+  margin: auto;
+}
+.crescent {
+  position: absolute;
+  border-radius: 100%;
+  right: 0;
+  width: 1.5rem;
+  height: 1.5rem;
+  background: white;
+  transform: scale(0);
+  transform-origin: top right;
+  transition: transform 0.3s cubic-bezier(0.645, 0.045, 0.355, 1);
+}
+
+label {
+  cursor: pointer;
+}
+
+.darkbox {
+  height: 2rem;
+}
+
+/* -------- Switch Styles ------------*/
+[type="checkbox"] {
+  display: none;
+}
+
+[type="checkbox"]:checked + .darkbox .crescent {
+  transform: scale(1);
+  background: #14151a;
+}

@@ -1,0 +1,143 @@
+@import "hmmenu.css";
+@import "devicemorph.css";
+
+/* body {
+  font-family: "Poppins", sans-serif;
+  font-size: 16px;
+  line-height: 24px;
+  font-weight: 400;
+  transition: all 200ms linear;
+} */
+
+.navbar {
+  height: 100px;
+  display: flex;
+  transition: 0.6s;
+}
+
+#logo {
+  height: 80px;
+  transition: 0.6s;
+}
+
+.navbar-content {
+  width: 100vw;
+  display: flex;
+  justify-content: flex-end;
+  align-content: center;
+}
+
+.darkmodebutton {
+  position: relative;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 50px;
+  height: 10px;
+  /* background-color: aqua; */
+}
+
+#dmtoggle {
+  position: absolute;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  opacity: 0.25;
+  cursor: pointer;
+  transition: transform 0.9s, opacity 0.15s;
+}
+
+body.dark-mode #dmtoggle {
+  transform: rotate(-45deg);
+}
+
+#dmtoggle:hover {
+  opacity: 1;
+}
+
+#dmtoggle div {
+  position: absolute;
+  background: #424242;
+  transition: transform 0.3s, background 0.3s, opacity 0.3s;
+}
+
+body.dark-mode #dmtoggle div {
+  background: #f5f5f5;
+}
+
+#dmtoggle .arc,
+#dmtoggle .darc {
+  width: 16px;
+  height: 16px;
+  border-radius: 16px;
+}
+
+body.dark-mode #dmtoggle .arc {
+  transform: scale(1.2);
+}
+
+#dmtoggle .darc {
+  background: #f5f5f5;
+  opacity: 0;
+}
+
+body.dark-mode #dmtoggle .darc {
+  transform: translateX(6px);
+  background: #111417;
+  opacity: 1;
+}
+
+#dmtoggle .ray {
+  width: 6px;
+  height: 2px;
+  border-radius: 2px;
+}
+
+#dmtoggle .ray.one {
+  transform: rotate(0deg) translateX(14px);
+}
+#dmtoggle .ray.two {
+  transform: rotate(45deg) translateX(14px);
+}
+#dmtoggle .ray.three {
+  transform: rotate(90deg) translateX(14px);
+}
+#dmtoggle .ray.four {
+  transform: rotate(135deg) translateX(14px);
+}
+#dmtoggle .ray.five {
+  transform: rotate(180deg) translateX(14px);
+}
+#dmtoggle .ray.six {
+  transform: rotate(225deg) translateX(14px);
+}
+#dmtoggle .ray.seven {
+  transform: rotate(270deg) translateX(14px);
+}
+#dmtoggle .ray.eight {
+  transform: rotate(315deg) translateX(14px);
+}
+
+body.dark-mode #dmtoggle .ray {
+  transform: scaleX(0);
+  opacity: 0;
+}
+
+.content-wrapper {
+  overflow-x: hidden;
+  transition: all 200ms linear;
+}
+
+/* home */
+
+.home {
+  height: 100vh;
+}
+
+/* services */
+
+.services {
+  background-color: purple;
+
+  height: 100vh;
+}
