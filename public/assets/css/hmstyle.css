@@ -1,5 +1,6 @@
 @import "hmmenu.css";
 @import "devicemorph.css";
+@import "landing.css";
 
 /* body {
   font-family: "Poppins", sans-serif;
@@ -126,18 +127,4 @@ body.dark-mode #dmtoggle .ray {
 .content-wrapper {
   overflow-x: hidden;
   transition: all 200ms linear;
-}
-
-/* home */
-
-.home {
-  height: 100vh;
-}
-
-/* services */
-
-.services {
-  background-color: purple;
-
-  height: 100vh;
 }
