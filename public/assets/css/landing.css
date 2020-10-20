@@ -6,6 +6,13 @@
   display: flex;
 }
 
+.services {
+  width: 100%;
+  height: 100%;
+  margin-top: 10vh;
+  display: flex;
+}
+
 /* Landing Title */
 
 .home .textscroll ul {
