@@ -37,6 +37,76 @@
     class="with-custom-webkit-scrollbars with-custom-css-scrollbars"
     data-set-preferred-theme-onload="true"
   >
+    <div class="preloader">
+      <svg
+        width="200"
+        height="200"
+        xmlns="http://www.w3.org/2000/svg"
+        viewBox="0 0 100 100"
+        preserveAspectRatio="xMidYMid"
+        class="lds-ripple"
+        style="background: 0 0"
+      >
+        <circle
+          cx="50"
+          cy="50"
+          r="4.719"
+          fill="none"
+          stroke="#1d3f72"
+          stroke-width="2"
+        >
+          <animate
+            attributeName="r"
+            calcMode="spline"
+            values="0;40"
+            keyTimes="0;1"
+            dur="3"
+            keySplines="0 0.2 0.8 1"
+            begin="-1.5s"
+            repeatCount="indefinite"
+          />
+          <animate
+            attributeName="opacity"
+            calcMode="spline"
+            values="1;0"
+            keyTimes="0;1"
+            dur="3"
+            keySplines="0.2 0 0.8 1"
+            begin="-1.5s"
+            repeatCount="indefinite"
+          />
+        </circle>
+        <circle
+          cx="50"
+          cy="50"
+          r="27.591"
+          fill="none"
+          stroke="#5699d2"
+          stroke-width="2"
+        >
+          <animate
+            attributeName="r"
+            calcMode="spline"
+            values="0;40"
+            keyTimes="0;1"
+            dur="3"
+            keySplines="0 0.2 0.8 1"
+            begin="0s"
+            repeatCount="indefinite"
+          />
+          <animate
+            attributeName="opacity"
+            calcMode="spline"
+            values="1;0"
+            keyTimes="0;1"
+            dur="3"
+            keySplines="0.2 0 0.8 1"
+            begin="0s"
+            repeatCount="indefinite"
+          />
+        </circle>
+      </svg>
+    </div>
     <div class="page-wrapper with-navbar">
       <nav class="navbar" id="navbar">
         <a href="#" class="navbar-brand">
@@ -47,10 +117,41 @@
           <div class="navbar-nav">
             <ul class="navbar-nav d-none d-sm-flex">
               <li class="nav-item active">
-                <a href="#portfolio" class="nav-link">Portfolio</a>
+                <a href="#home" class="nav-link">Home</a>
               </li>
               <li class="nav-item">
-                <a href="#services" class="nav-link">Services</a>
+                <a href="#portfolio" class="nav-link">Portfolio</a>
+              </li>
+              <li class="nav-item dropdown with-arrow">
+                <a
+                  class="nav-link"
+                  data-toggle="dropdown"
+                  id="nav-link-dropdown-toggle"
+                >
+                  Services
+                  <i class="fa fa-angle-down ml-5" aria-hidden="true"></i>
+                  <!-- ml-5= margin-left: 0.5rem (5px) -->
+                </a>
+                <div
+                  class="dropdown-menu dropdown-menu-right"
+                  aria-labelledby="nav-link-dropdown-toggle"
+                >
+                  <a href="#" class="dropdown-item">API builder</a>
+                  <a href="#" class="dropdown-item">Functions</a>
+                  <a href="#" class="dropdown-item">
+                    Analytics
+                    <strong class="badge badge-success float-right">New</strong>
+                    <!-- float-right = float: right -->
+                  </a>
+                  <div class="dropdown-divider"></div>
+                  <div class="dropdown-content">
+                    <a href="#" class="btn btn-block" role="button">
+                      See all products
+                      <i class="fa fa-angle-right ml-5" aria-hidden="true"></i>
+                      <!-- ml-5= margin-left: 0.5rem (5px) -->
+                    </a>
+                  </div>
+                </div>
               </li>
               <li class="nav-item">
                 <a href="#about" class="nav-link">About us</a>
@@ -84,9 +185,11 @@
                 <div>
                   <div>
                     <ul>
-                      <li><a href="#">Home</a></li>
+                      <li class="nav-item active">
+                        <a href="#" class="nav-link">Home</a>
+                      </li>
                       <li><a href="#portfolio">Portfolio</a></li>
-                      <li><a href="#services">Services</a></li>
+
                       <li><a href="#about">About Us</a></li>
                       <li><a href="#contact">Contact Us</a></li>
                     </ul>
@@ -114,46 +217,28 @@
       </nav>
       <!-- Content wrapper -->
       <div class="content-wrapper" id="content" onscroll="shrinkNav()">
-        <div class="home" id="#home">
-          <div class="heading">
-            <h3>Build your next</h3>
-            <div class="textscroll">
-              <ul>
-                <li>Desktop</li>
-                <li>Tablet</li>
-                <li>Mobile</li>
-                <li>Web</li>
-              </ul>
-            </div>
-            <h3>application with us</h3>
-            <div class="device-container">
-              <figure class="device">
-                <figcaption></figcaption>
-              </figure>
-            </div>
-          </div>
-        </div>
-        <div class="sliders-container">
-          <!-- Simple pagination for the slider -->
-          <ul class="pagination">
-            <li class="pagination__item"><a class="pagination__button"></a></li>
-            <li class="pagination__item"><a class="pagination__button"></a></li>
-            <li class="pagination__item"><a class="pagination__button"></a></li>
-            <li class="pagination__item"><a class="pagination__button"></a></li>
-          </ul>
-        </div>
+        <!-- Landing page section -->
+        <section class="home" id="#home">
+          <div class="magbtn" id="magbtn"></div>
+        </section>
+        <!-- Landing page section end-->
+        <!-- Portfolio page section -->
         <section class="portfolio"></section>
-        <section class="about"></section>
+        <!-- Portfolio page section end -->
+        <!-- Services page section -->
+        <section class="services"></section>
+        <!-- Services page section end-->
+        <!-- <section class="about"></section>
         <section class="contact"></section>
-        <section class="about"></section>
+        <section class="about"></section> -->
 
         <!--===============================================-->
         <!--    Footer-->
         <!--===============================================-->
         <footer class="footer">
           <div class="row d-flex justify-content-around">
-            <a href="privacy.html">Privacy policy</a
-            ><a href="terms.html">Terms & Conditions</a>
+            <a href="privacy.html">Privacy policy</a>
+            <a href="terms.html">Terms & Conditions</a>
           </div>
           <p class="">
             Copyright &copy; 2020 - 2021 APPVENTOR&trade; Technologies.
@@ -166,29 +251,27 @@
     <!-- Halfmoon JS -->
     <script src="assets/js/halfmoon.js"></script>
     <script src="assets/js/apphm.js"></script>
-    <script src="https://rawgit.com/lmgonzalves/momentum-slider/master/dist/momentum-slider.min.js"></script>
-    <script src="assets/js/slider.js"></script>
-    <script src="assets/js/apphm.js"></script>
+    <script src="assets/js/magbtn.js"></script>
     <script>
-      // (function (d, src, c) {
-      //   var t = d.scripts[d.scripts.length - 1],
-      //     s = d.createElement("script");
-      //   s.id = "la_x2s6df8d";
-      //   s.async = true;
-      //   s.src = src;
-      //   s.onload = s.onreadystatechange = function () {
-      //     var rs = this.readyState;
-      //     if (rs && rs != "complete" && rs != "loaded") {
-      //       return;
-      //     }
-      //     c(this);
-      //   };
-      //   t.parentElement.insertBefore(s, t.nextSibling);
-      // })(document, "https://appventor.ladesk.com/scripts/track.js", function (
-      //   e
-      // ) {
-      //   LiveAgent.createButton("01f38iiu", e);
-      // });
+      (function (d, src, c) {
+        var t = d.scripts[d.scripts.length - 1],
+          s = d.createElement("script");
+        s.id = "la_x2s6df8d";
+        s.async = true;
+        s.src = src;
+        s.onload = s.onreadystatechange = function () {
+          var rs = this.readyState;
+          if (rs && rs != "complete" && rs != "loaded") {
+            return;
+          }
+          c(this);
+        };
+        t.parentElement.insertBefore(s, t.nextSibling);
+      })(document, "https://appventor.ladesk.com/scripts/track.js", function (
+        e
+      ) {
+        LiveAgent.createButton("01f38iiu", e);
+      });
     </script>
   </body>
 </html>

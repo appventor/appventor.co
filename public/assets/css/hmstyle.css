@@ -2,7 +2,7 @@
 @import "devicemorph.css";
 @import "landing.css";
 @import "slider.css";
-
+@import "preloader.css";
 /* body {
   font-family: "Poppins", sans-serif;
   font-size: 16px;
@@ -11,10 +11,18 @@
   transition: all 200ms linear;
 } */
 
+html {
+  font-family: sans-serif;
+  scroll-snap-type: mandatory;
+  scroll-snap-points-y: repeat(100vh);
+  scroll-snap-type: y mandatory;
+}
+
 .navbar {
   height: 100px;
   display: flex;
   transition: 0.6s;
+  border-color: transparent;
 }
 
 #logo {
@@ -128,4 +136,10 @@ body.dark-mode #dmtoggle .ray {
 .content-wrapper {
   overflow-x: hidden;
   transition: all 200ms linear;
+}
+
+section {
+  height: 100vh;
+  scroll-snap-align: start;
+  /* position: relative; */
 }
