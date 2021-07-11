@@ -5,6 +5,7 @@
 @import "slider.css";
 @import "preloader.css";
 @import "portfolio.css";
+@import "parallax.css";
 /*@import "bootstrap.min.css";*/
 
 [data-theme="dark"] {

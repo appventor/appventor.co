@@ -1,29 +1,29 @@
-let imgs = document.querySelectorAll(".img-parallax");
-imgs.forEach((img)=>{
-    let imgParent = img.parentElement;
-
-    function  parallaxImg(){
-        let speed = img.getAttribute('data-speed');
-        let imgY = imgParent.offsetTop;
-        let winY = document.body.scrollTop;
-        let winH = img.clientHeight;
-        let parentH = imgParent.offsetHeight;
-        console.log('imgY: '+imgY,'winY: '+ winY, 'winH: '+ winH, 'parentH: '+ parentH);
-
-        let winBottom = winY + winH;
-        if(winBottom > imgY && winY< imgY+ parentH) {
-            let imgBottom = ((winBottom - imgY) * speed);
-            let imgTop = winH + parentH;
-            var imgPercent = ((imgBottom / imgTop) * 100) + (50 - (speed * 50));
-        }
-        // console.log(imgPercent);
-        img.setAttribute('top', imgPercent + '%');
-        img.setAttribute('transform', 'translate(-50%, -' + imgPercent + '%)')
-    }
-    document.addEventListener('scroll', function(e) {
-        parallaxImg();
-    });
-});
+// let imgs = document.querySelectorAll(".img-parallax");
+// imgs.forEach((img)=>{
+//     let imgParent = img.parentElement;
+//
+//     function  parallaxImg(){
+//         let speed = img.getAttribute('data-speed');
+//         let imgY = imgParent.offsetTop;
+//         let winY = document.body.scrollTop;
+//         let winH = img.clientHeight;
+//         let parentH = imgParent.offsetHeight;
+//         console.log('imgY: '+imgY,'winY: '+ winY, 'winH: '+ winH, 'parentH: '+ parentH);
+//
+//         let winBottom = winY + winH;
+//         if(winBottom > imgY && winY< imgY+ parentH) {
+//             let imgBottom = ((winBottom - imgY) * speed);
+//             let imgTop = winH + parentH;
+//             var imgPercent = ((imgBottom / imgTop) * 100) + (50 - (speed * 50));
+//         }
+//         // console.log(imgPercent);
+//         img.setAttribute('top', imgPercent + '%');
+//         img.setAttribute('transform', 'translate(-50%, -' + imgPercent + '%)')
+//     }
+//     document.addEventListener('scroll', function(e) {
+//         parallaxImg();
+//     });
+// });
 
 $('.img-parallax').each(function(){
     var img = $(this);

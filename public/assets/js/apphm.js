@@ -1,45 +1,36 @@
-function shrinkNav() {
-  if (document.getElementById("content").scrollTop > 80) {
-    document.getElementById("navbar").style.height = "50px";
-    document.getElementById("logo").style.height = "40px";
-  } else {
-    document.getElementById("navbar").style.height = "100px";
-    document.getElementById("logo").style.height = "80px";
-  }
-}
+window.addEventListener('scroll', () => {
+    if (document.documentElement.scrollTop > 80) {
+        document.getElementsByClassName("navbar")[0].style.height = "50px";
+        document.getElementById("logo").style.height = "40px";
+    } else {
+        document.getElementsByClassName("navbar")[0].style.height = "100px";
+        document.getElementById("logo").style.height = "80px";
+    }
+});
 
 const preloader = document.querySelector('.preloader');
 const pulse = document.querySelector('.pulsating-circle');
-// const fadeEffect = setInterval(() => {
-//   console.log("WHY");
-//   // if we don't set opacity 1 in CSS, then   //it will be equaled to "", that's why we   // check it
-//   if (!preloader.style.opacity) {
-//     preloader.style.opacity = 1;
-//   }
-//   if (preloader.style.opacity > 0) {
-//     preloader.style.opacity -= 0.1;
-//   } else {
-//     clearInterval(fadeEffect);
-//   }
-// }, 200);
-
-// window.addEventListener('load', fadeEffect);
 
 window.addEventListener("load", function () {
-	console.log("load fn");
-	setTimeout(function(){
-    console.log("timer loaded");
-    preloader.style.opacity = 0;
+	// setTimeout(function(){
+    preloader.style.opacity = '0';
     preloader.style.visibility = "hidden";
-	}, 1500);
+	// }, 450000);
 });
 
+// document.getElementById("dmtoggle").addEventListener("click", toggleDarkmode);
 
-// window.addEventListener("load", function () {
-// 	var body = document.body;
-// 	console.log("load fn");
-// 	setTimeout(function(){
-// 		console.log("timer loaded");
-// 		body.classList.add("loaded");
-// 	}, 1500);
-// });
+function toggleDarkmode() {
+    var light = document.querySelectorAll('[class*="-light"]');
+    var dark = document.querySelectorAll('[class*="-dark"]');
+    light.forEach(xFunction);
+    dark.forEach(xFunction);
+    // document.body.classList.toggle('light dark');
+}
+
+function xFunction(element, index){
+    console.log(element)
+    element.classList.toggle('bg-light bg-dark')
+    element.classList.toggle('text-light text-dark')
+    element.classList.toggle('navbar-light navbar-dark')
+}
