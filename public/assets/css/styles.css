@@ -1,40 +1,71 @@
 @import "hmmenu.css";
 @import "devicemorph.css";
 @import "landing.css";
+@import "services.css";
 @import "slider.css";
 @import "preloader.css";
-/* body {
+@import "portfolio.css";
+/*@import "bootstrap.min.css";*/
+
+[data-theme="dark"] {
+  background-color: #111 !important;
+  color: #eee;
+}
+
+[data-theme="dark"] .bg-light {
+  background-color: #000 !important;
+}
+
+[data-theme="dark"] .bg-white {
+  background-color: #000 !important;
+}
+
+[data-theme="dark"] .bg-black {
+  background-color: #eee !important;
+}
+
+body {
   font-family: "Poppins", sans-serif;
-  font-size: 16px;
-  line-height: 24px;
+  font-size: 100%;
   font-weight: 400;
+  max-width: 100%;
   transition: all 200ms linear;
-} */
+  scroll-behavior: smooth;
+  overflow-x: hidden;
+}
 
 html {
   font-family: sans-serif;
-  scroll-snap-type: mandatory;
-  scroll-snap-points-y: repeat(100vh);
-  scroll-snap-type: y mandatory;
+  user-drag: none;
+  user-select: none;
+  -moz-user-select: none;
+  -webkit-user-drag: none;
+  -webkit-user-select: none;
+  -ms-user-select: none;
+
 }
 
 .navbar {
   height: 100px;
   display: flex;
+  backdrop-filter: blur(4px);
+  -webkit-backdrop-filter: blur(4px);
+  background: rgba( 255, 255, 255, 0.25 );
+  box-shadow: 0 8px 32px 0 rgba( 31, 38, 135, 0.37 );
   transition: 0.6s;
-  border-color: transparent;
+}
+
+body[data-theme="dark"] .navbar {
+  background: rgba( 0, 0, 0, 0.25 );
+}
+
+body[data-theme="dark"] .navbar-light .navbar-nav .nav-link {
+  color: white;
 }
 
 #logo {
   height: 80px;
   transition: 0.6s;
-}
-
-.navbar-content {
-  width: 100vw;
-  display: flex;
-  justify-content: flex-end;
-  align-content: center;
 }
 
 .darkmodebutton {
@@ -52,12 +83,12 @@ html {
   display: flex;
   align-items: center;
   justify-content: center;
-  opacity: 0.25;
+  opacity: 0.9;
   cursor: pointer;
   transition: transform 0.9s, opacity 0.15s;
 }
 
-body.dark-mode #dmtoggle {
+body[data-theme="dark"] #dmtoggle {
   transform: rotate(-45deg);
 }
 
@@ -71,7 +102,7 @@ body.dark-mode #dmtoggle {
   transition: transform 0.3s, background 0.3s, opacity 0.3s;
 }
 
-body.dark-mode #dmtoggle div {
+body[data-theme="dark"] #dmtoggle div {
   background: #f5f5f5;
 }
 
@@ -82,7 +113,7 @@ body.dark-mode #dmtoggle div {
   border-radius: 16px;
 }
 
-body.dark-mode #dmtoggle .arc {
+body[data-theme="dark"] #dmtoggle .arc {
   transform: scale(1.2);
 }
 
@@ -91,9 +122,9 @@ body.dark-mode #dmtoggle .arc {
   opacity: 0;
 }
 
-body.dark-mode #dmtoggle .darc {
+body[data-theme="dark"] #dmtoggle .darc {
   transform: translateX(6px);
-  background: #111417;
+  background: #000000;
   opacity: 1;
 }
 
@@ -128,18 +159,7 @@ body.dark-mode #dmtoggle .darc {
   transform: rotate(315deg) translateX(14px);
 }
 
-body.dark-mode #dmtoggle .ray {
+body[data-theme="dark"] #dmtoggle .ray {
   transform: scaleX(0);
   opacity: 0;
-}
-
-.content-wrapper {
-  overflow-x: hidden;
-  transition: all 200ms linear;
-}
-
-section {
-  height: 100vh;
-  scroll-snap-align: start;
-  /* position: relative; */
 }
