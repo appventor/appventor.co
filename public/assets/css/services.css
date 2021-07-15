@@ -183,7 +183,7 @@
 
 @media only screen and (max-width: 576px) {
     .service-card{
-        width: 350px;
+        width: 300px;
     }
     .spacer-end{
         width: 30vw;
